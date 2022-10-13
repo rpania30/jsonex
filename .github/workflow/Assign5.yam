@@ -19,5 +19,5 @@ jobs:
             distribution: 'adopt'
             cache: maven
         - run: mvn test-compile -pl jsoncoder -am
-        - run: mvn -pl jsoncoder test -Dtest=com.baidu.jsoncoder.pbrpc.EchoServiceTest#testDynamiceTalkTimeout
-        - run: mvn -pl jsoncoder edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.baidu.jsoncoder.pbrpc.EchoServiceTest#testDynamiceTalkTimeout
+        - run: mvn -pl jsoncoder test -Dtest=com.jianwu.jsoncoder.pbrpc.EchoServiceTest#testDynamiceTalkTimeout
+        - run: mvn -pl jsoncoder edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.jianwu.jsoncoder.pbrpc.EchoServiceTest#testDynamiceTalkTimeout
