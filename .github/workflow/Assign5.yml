@@ -1,4 +1,4 @@
-name: Assignment 5 
+name: Assign5
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
@@ -7,11 +7,11 @@ jobs:
     steps:
         - name: Checkout
           uses: actions/checkout@v2
-          with:
-            repository: rpania30/jsonex
-            submodules: 'true'
+          #with:
+            #repository: rpania30/jsonex
+            #submodules: 'true'
             #path: './depencies/vtk'
-            ref: 83cd2edafbca4438abee6542162ab206ad3fedd8
+            #ref: 83cd2edafbca4438abee6542162ab206ad3fedd8
         - name: Set up JDK 8
           uses: actions/setup-java@v3
           with:
@@ -19,5 +19,5 @@ jobs:
             distribution: 'adopt'
             cache: maven
         - run: mvn test-compile -pl jsonex -am
-        - run: mvn -pl jsonex test -Dtest=org.jsoncoder.snapshottest.SnapshotTest#testSnapshot
-        - run: mvn -pl jsonex edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.jsoncoder.snapshottest.SnapshotTest#testSnapshot
+        - run: mvn -pl jsonex test -Dtest=org.jsonex.snapshottest.SnapshotTest#testSnapshot
+        - run: mvn -pl jsonex edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.jsonex.snapshottest.SnapshotTest#testSnapshot
