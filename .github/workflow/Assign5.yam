@@ -11,7 +11,7 @@ jobs:
             repository: rpania30/jsonex
             submodules: 'true'
             #path: './depencies/vtk'
-            ref: 4de9d3da1309d4366da36857b86f50a0c212ef71
+            ref: 83cd2edafbca4438abee6542162ab206ad3fedd8
         - name: Set up JDK 8
           uses: actions/setup-java@v3
           with:
@@ -19,5 +19,5 @@ jobs:
             distribution: 'adopt'
             cache: maven
         - run: mvn test-compile -pl jsonex -am
-        - run: mvn -pl jsonex test -Dtest=org.jsoncoder.snapshottest.SnapshotTest#testSnapshot
-        - run: mvn -pl jsonex edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.jsoncoder.snapshottest.SnapshotTest#testSnapshot
+        - run: mvn -pl jsonex test -Dtest=org.jsonex.snapshottest.SnapshotTest#testSnapshot
+        - run: mvn -pl jsonex edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.jsonex.snapshottest.SnapshotTest#testSnapshot
