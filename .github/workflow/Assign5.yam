@@ -1,0 +1,23 @@
+name: Assignment 5 
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+          with:
+            repository: rpania30/jsonex
+            submodules: 'true'
+            #path: './depencies/vtk'
+            ref: 4de9d3da1309d4366da36857b86f50a0c212ef71
+        - name: Set up JDK 8
+          uses: actions/setup-java@v3
+          with:
+            java-version: '8'
+            distribution: 'adopt'
+            cache: maven
+        - run: mvn test-compile -pl jsoncoder -am
+        - run: mvn -pl jsoncoder test -Dtest=com.baidu.jsoncoder.pbrpc.EchoServiceTest#testDynamiceTalkTimeout
+        - run: mvn -pl jsoncoder edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.baidu.jsoncoder.pbrpc.EchoServiceTest#testDynamiceTalkTimeout
