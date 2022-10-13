@@ -18,6 +18,6 @@ jobs:
             java-version: '8'
             distribution: 'adopt'
             cache: maven
-        - run: mvn test-compile -pl jsoncoder -am
-        - run: mvn -pl jsoncoder test -Dtest=com.jianwu.jsoncoder.pbrpc.EchoServiceTest#testDynamiceTalkTimeout
-        - run: mvn -pl jsoncoder edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.jianwu.jsoncoder.pbrpc.EchoServiceTest#testDynamiceTalkTimeout
+        - run: mvn test-compile -pl jsonex -am
+        - run: mvn -pl jsonex test -Dtest=org.jsonex.snapshottest.SnapshotTest#testSnapshot
+        - run: mvn -pl jsonex edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.jsonex.snapshottest.SnapshotTest#testSnapshot
